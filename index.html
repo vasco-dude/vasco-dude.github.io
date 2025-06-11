@@ -100,6 +100,11 @@
             background-color: #d1d9e4;
         }
 
+        /* Add this to your CSS */
+        .nav-item .custom-icon {
+            border-radius: 0; /* Removes the circle shape */
+            background-color: transparent; /* Removes the gray background circle */
+        }
         .nav-item .nav-title {
             font-weight: 600;
             font-size: 1.1em;
@@ -150,7 +155,7 @@
             <!-- IMPORTANT: Replace the placeholder image URLs with links to your actual icons. -->
             
             <a href="hunter_guide.html" class="nav-item">
-                <img src="hunter-icon.png" alt="Hunter Icon">
+                <img src="hunter-icon.png" alt="Hunter Icon" class="custom-icon">
                 <span class="nav-title">The Hunter</span>
                 <span class="nav-desc">Mastery of Dagger, Bow, and Song</span>
             </a>
