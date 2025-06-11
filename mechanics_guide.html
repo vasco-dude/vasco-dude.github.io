@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Vesteria Codex - Core Mechanics</title>
+    <title>The Vesteria Codex - Core Mechanics & Attributes</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -63,21 +63,22 @@
         .perk-name { color: #5b7da8; }
         .points-text { color: #1d3c6e; }
 
-        ul.perk-list { list-style-type: none; padding-left: 0; }
-        ul.perk-list li { margin-bottom: 10px; padding: 8px 12px; background-color: #f8f9fa; border-radius: 4px; }
+        ul.perk-list, ul.trivia-list { list-style-type: none; padding-left: 0; }
+        ul.perk-list li, ul.trivia-list li { margin-bottom: 10px; padding: 8px 12px; background-color: #f8f9fa; border-radius: 4px; }
         
-        ul.secondary-stats-list { list-style-type: '➡  '; padding-left: 20px; }
-        ul.secondary-stats-list li { margin-bottom: 8px; }
+        ul.secondary-stats-list, ul.trivia-list { list-style-type: '➡  '; padding-left: 20px; }
+        ul.secondary-stats-list li, ul.trivia-list li { margin-bottom: 8px; }
 
         code {
             background-color: #e9eaec; padding: 3px 6px; border-radius: 4px;
             font-family: "Courier New", Courier, monospace; font-size: 0.95em;
         }
         
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border: 1px solid #e1e4e8; padding: 10px 15px; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #e1e4e8; padding: 12px 15px; text-align: left; }
         thead { background-color: #f7f9fc; font-weight: 600; }
         tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        td.center-align { text-align: center; }
 
         .footer {
             text-align: center; margin-top: 60px; border-top: 1px solid #e1e1e1;
@@ -94,14 +95,15 @@
 <body>
 
 <div class="container">
-    <h1>Core Mechanics</h1>
-    <p class="tagline">An In-Depth Analysis of Player Attributes and Derived Statistics</p>
+    <h1>The Vesteria Codex</h1>
+    <p class="tagline">An In-Depth Analysis of Player Attributes, Statistics, and Equipment</p>
 
     <nav class="sub-nav">
         <a href="index.html">🏠 Home</a>
         <a href="#primary-stats">Primary Stats</a>
         <a href="#secondary-stats">Secondary Stats</a>
         <a href="#calculations">Stat Calculations</a>
+        <a href="#equipment-attributes">Equipment Attributes</a>
     </nav>
 
     <div id="primary-stats">
@@ -208,12 +210,12 @@
         <div class="info-card">
             <code>PYS Bonus = floor(STR * 0.625)</code> | <code>Stamina = floor(STR * 0.05)</code>
             <table>
-                <thead><tr><th>Points</th><th>Physical Attack Bonus (PYS)</th><th>Stamina Bonus</th></tr></thead>
+                <thead><tr><th class="center-align">Points</th><th class="center-align">Physical Attack Bonus (PYS)</th><th class="center-align">Stamina Bonus</th></tr></thead>
                 <tbody>
-                    <tr><td>50</td><td>31%</td><td>2.5</td></tr>
-                    <tr><td>100</td><td>62%</td><td>5.0</td></tr>
-                    <tr><td>150</td><td>93%</td><td>7.5</td></tr>
-                    <tr><td>200</td><td>125%</td><td>10.0</td></tr>
+                    <tr><td class="center-align">50</td><td class="center-align">31%</td><td class="center-align">2.5</td></tr>
+                    <tr><td class="center-align">100</td><td class="center-align">62%</td><td class="center-align">5.0</td></tr>
+                    <tr><td class="center-align">150</td><td class="center-align">93%</td><td class="center-align">7.5</td></tr>
+                    <tr><td class="center-align">200</td><td class="center-align">125%</td><td class="center-align">10.0</td></tr>
                 </tbody>
             </table>
         </div>
@@ -222,12 +224,12 @@
         <div class="info-card">
             <code>Attack Speed = DEX * 0.45%</code> | <code>Crit Chance ≈ DEX * 0.1667%</code>
             <table>
-                <thead><tr><th>Points</th><th>Attack Speed Bonus</th><th>Crit Chance Bonus (Approx.)</th></tr></thead>
+                <thead><tr><th class="center-align">Points</th><th class="center-align">Attack Speed Bonus</th><th class="center-align">Crit Chance Bonus (Approx.)</th></tr></thead>
                 <tbody>
-                    <tr><td>50</td><td>22.5%</td><td>8.3%</td></tr>
-                    <tr><td>100</td><td>45.0%</td><td>16.7%</td></tr>
-                    <tr><td>150</td><td>67.5%</td><td>25.0%</td></tr>
-                    <tr><td>200</td><td>90.0%</td><td>33.3%</td></tr>
+                    <tr><td class="center-align">50</td><td class="center-align">22.5%</td><td class="center-align">8.3%</td></tr>
+                    <tr><td class="center-align">100</td><td class="center-align">45.0%</td><td class="center-align">16.7%</td></tr>
+                    <tr><td class="center-align">150</td><td class="center-align">67.5%</td><td class="center-align">25.0%</td></tr>
+                    <tr><td class="center-align">200</td><td class="center-align">90.0%</td><td class="center-align">33.3%</td></tr>
                 </tbody>
             </table>
         </div>
@@ -236,12 +238,12 @@
         <div class="info-card">
             <code>MAG Bonus = INT * 0.15%</code> | <code>MP Bonus = INT * 1</code>
             <table>
-                <thead><tr><th>Points</th><th>Magical Attack Bonus (MAG)</th><th>Flat Mana Bonus</th></tr></thead>
+                <thead><tr><th class="center-align">Points</th><th class="center-align">Magical Attack Bonus (MAG)</th><th class="center-align">Flat Mana Bonus</th></tr></thead>
                 <tbody>
-                    <tr><td>50</td><td>7.5%</td><td>50</td></tr>
-                    <tr><td>100</td><td>15.0%</td><td>100</td></tr>
-                    <tr><td>150</td><td>22.5%</td><td>150</td></tr>
-                    <tr><td>200</td><td>30.0%</td><td>200</td></tr>
+                    <tr><td class="center-align">50</td><td class="center-align">7.5%</td><td class="center-align">50</td></tr>
+                    <tr><td class="center-align">100</td><td class="center-align">15.0%</td><td class="center-align">100</td></tr>
+                    <tr><td class="center-align">150</td><td class="center-align">22.5%</td><td class="center-align">150</td></tr>
+                    <tr><td class="center-align">200</td><td class="center-align">30.0%</td><td class="center-align">200</td></tr>
                 </tbody>
             </table>
         </div>
@@ -250,14 +252,109 @@
         <div class="info-card">
             <code>Base HP Bonus = VIT * 9</code> | <code>MP Bonus = VIT * 2</code>
             <table>
-                <thead><tr><th>Points</th><th>Base Hit Point (HP) Bonus</th><th>Mana Point (MP) Bonus</th></tr></thead>
+                <thead><tr><th class="center-align">Points</th><th class="center-align">Base Hit Point (HP) Bonus</th><th class="center-align">Mana Point (MP) Bonus</th></tr></thead>
                 <tbody>
-                    <tr><td>50</td><td>450</td><td>100</td></tr>
-                    <tr><td>100</td><td>900</td><td>200</td></tr>
-                    <tr><td>150</td><td>1350</td><td>300</td></tr>
-                    <tr><td>200</td><td>1800</td><td>400</td></tr>
+                    <tr><td class="center-align">50</td><td class="center-align">450</td><td class="center-align">100</td></tr>
+                    <tr><td class="center-align">100</td><td class="center-align">900</td><td class="center-align">200</td></tr>
+                    <tr><td class="center-align">150</td><td class="center-align">1350</td><td class="center-align">300</td></tr>
+                    <tr><td class="center-align">200</td><td class="center-align">1800</td><td class="center-align">400</td></tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="equipment-attributes">
+        <h2>Equipment Attributes</h2>
+        <p>An Equipment Attribute, also referred to as a <strong>Modifier</strong> or <strong>Variant</strong>, is a mechanic in Vesteria that applies a special beneficial or detrimental effect to a piece of equipment. Whenever an enemy drops a weapon or armor, it has a chance to receive an attribute. Players can also use <strong>Modifier Scrolls</strong> to grant attributes, and occasionally, event gifts may reward items with them. There are 8 attributes for weaponry and 7 for armory.</p>
+        
+        <div class="info-card">
+            <h4>Attribute Overview</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Effect</th>
+                        <th class="center-align">Chance</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>(Nothing)</strong></td>
+                        <td>None</td>
+                        <td class="center-align">~70.1%</td>
+                        <td>Standard-issue gear. No bells or whistles.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dull or Tattered</strong></td>
+                        <td>Decreases weapon attack or armor defense.</td>
+                        <td class="center-align">40%</td>
+                        <td>Bosses and minibosses cannot drop items with this attribute.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fierce (STR)</strong></td>
+                        <td>Adds or boosts Strength.</td>
+                        <td class="center-align">6.75%</td>
+                        <td>Armor-STR = LvlReq * 1/5. Weapon-STR = LvlReq * 3/11.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vibrant (VIT)</strong></td>
+                        <td>Adds or boosts Vitality.</td>
+                        <td class="center-align">6.75%</td>
+                        <td>Armor-VIT = LvlReq * 1/5. Weapon-VIT = LvlReq * 3/11.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Keen (INT)</strong></td>
+                        <td>Adds or boosts Intelligence.</td>
+                        <td class="center-align">6.75%</td>
+                        <td>Armor-INT = LvlReq * 1/5. Weapon-INT = LvlReq * 3/11.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Swift (DEX)</strong></td>
+                        <td>Adds or boosts Dexterity.</td>
+                        <td class="center-align">6.75%</td>
+                        <td>Armor-DEX = LvlReq * 1/5. Weapon-DEX = LvlReq * 3/11.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pristine</strong></td>
+                        <td>Moderately boosts weapon ATK / armor DEF. Adds +8% XP gain.</td>
+                        <td class="center-align">3%</td>
+                        <td>ATK/DEF = LvlReq * 4/25. -25% chance of being destroyed by a scroll.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Legendary</strong></td>
+                        <td>Greatly boosts weapon ATK / armor DEF. Adds +12% XP gain.</td>
+                        <td class="center-align">0.1%</td>
+                        <td>ATK/DEF = LvlReq * 9/25. -50% chance of being destroyed by a scroll. The rarest and 3rd strongest attribute.</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Mythic</strong></td>
+                        <td>Massively boosts weapon ATK/DEF. Adds +10% crit chance (weapons) or headgear stat. +12% XP gain.</td>
+                        <td class="center-align">Event Only</td>
+                        <td>Immune to Dark/Cursed Scrolls. Cannot be dropped or picked up on death. The strongest attribute.</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Original</strong></td>
+                        <td>Boosts EXP same as Legendary. Soulbound.</td>
+                        <td class="center-align">Creator Only</td>
+                        <td>Granted only to the item's concept artist/modeler. Immune to destruction from scrolls. Cannot be dropped.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h4 style="margin-top:40px;">Attribute Trivia</h4>
+        <div class="info-card">
+            <ul class="trivia-list">
+                <li>Weapon and armor "Variants" change in power according to the current level of the weapon and are empowered by reforging.</li>
+                <li>The modifier for Legendary is 9/25 of the weapon's base ATK, and for Pristine it's 4/25 (rounded).</li>
+                <li>Similarly, the modifier for Legendary armor is 9/25 of the armor's base defense, and for Pristine it's 4/25.</li>
+                <li>Equipment Attributes were added back into the game on May 14th, 2022, alongside the Warrior Update.</li>
+                <li>Only dropped weapons/armor can have attributes, with rare exceptions like the Swift Swirling Greatsword, Pristine Sword, and Pristine Staff.</li>
+                <li>Items from shops or quests cannot gain an equipment attribute.</li>
+            </ul>
         </div>
     </div>
 
