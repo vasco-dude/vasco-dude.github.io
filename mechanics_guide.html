@@ -3,366 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Vesteria Codex - Core Mechanics & Attributes</title>
+    <title>The Vesteria Codex - Core Mechanics</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #1c1e21;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 30px 50px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2, h3, h4 {
-            color: #2c3e50;
-            letter-spacing: -0.5px;
-        }
-
-        h1 { font-size: 3em; text-align: center; margin-bottom: 5px; }
-        .tagline { font-size: 1.2em; text-align: center; font-style: italic; color: #606770; margin-bottom: 30px; }
-
-        h2 { font-size: 2.2em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-top: 50px; }
-        h3 { font-size: 1.8em; margin-top: 40px; color: #78909C; /* Core Mechanics Blue-Grey */ }
-        h4 { font-size: 1.4em; margin-top: 30px; border-left: 4px solid #78909C; padding-left: 15px; }
-
-        .sub-nav {
-            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
-            background-color: #f7f9fc; padding: 15px; border-radius: 8px;
-            margin: 30px 0; position: sticky; top: 10px; z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .sub-nav a {
-            text-decoration: none; color: #2c3e50; background-color: #e9eaec;
-            padding: 8px 15px; border-radius: 20px; font-weight: 500;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-
-        .sub-nav a:hover { background-color: #78909C; color: #ffffff; }
-
-        .section-divider { border: 0; height: 2px; background: #e1e4e8; margin: 60px 0; }
-
-        .info-card {
-            background-color: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px;
-            padding: 25px; margin-top: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        strong, .perk-name, .points-text {
-            font-weight: 600; color: #34495e;
-        }
-        .perk-name { color: #5b7da8; }
-        .points-text { color: #1d3c6e; }
-
-        ul.perk-list, ul.trivia-list { list-style-type: none; padding-left: 0; }
-        ul.perk-list li, ul.trivia-list li { margin-bottom: 10px; padding: 8px 12px; background-color: #f8f9fa; border-radius: 4px; }
-        
-        ul.secondary-stats-list, ul.trivia-list { list-style-type: '➡  '; padding-left: 20px; }
-        ul.secondary-stats-list li, ul.trivia-list li { margin-bottom: 8px; }
-
-        code {
-            background-color: #e9eaec; padding: 3px 6px; border-radius: 4px;
-            font-family: "Courier New", Courier, monospace; font-size: 0.95em;
-        }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #e1e4e8; padding: 12px 15px; text-align: left; }
-        thead { background-color: #f7f9fc; font-weight: 600; }
-        tbody tr:nth-child(even) { background-color: #f8f9fa; }
-        td.center-align { text-align: center; }
-
-        .footer {
-            text-align: center; margin-top: 60px; border-top: 1px solid #e1e1e1;
-            padding-top: 30px; font-size: 0.9em; color: #888;
-        }
-
-        @media (max-width: 768px) {
-            .container { padding: 20px; }
-            h1 { font-size: 2.5em; }
-            .sub-nav { position: static; }
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #f0f2f5; color: #1c1e21; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 960px; margin: 40px auto; background-color: #ffffff; border-radius: 8px; padding: 40px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        h1 { font-size: 3em; text-align: center; margin-bottom: 10px; color: #2c3e50; }
+        .tagline { font-size: 1.2em; text-align: center; font-style: italic; color: #606770; margin-bottom: 50px; }
+        .breadcrumb { text-align: center; margin-bottom: 40px; }
+        .breadcrumb a { text-decoration: none; color: #78909C; font-weight: 600; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .hub-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+        .hub-card { border: 1px solid #e1e4e8; border-radius: 8px; padding: 30px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .hub-card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
+        .hub-card h2 { font-size: 2em; margin-top: 0; color: #2c3e50; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; }
+        .hub-card p { color: #606770; font-size: 0.95em; }
+        .hub-card a.button { display: inline-block; margin-top: 20px; padding: 12px 25px; background-color: #78909C; color: #ffffff; text-decoration: none; border-radius: 25px; font-weight: 600; transition: background-color 0.2s ease; }
+        .hub-card a.button:hover { background-color: #546e7a; }
+        .footer { text-align: center; margin-top: 60px; border-top: 1px solid #e1e1e1; padding-top: 30px; font-size: 0.9em; color: #888; }
+        @media (max-width: 768px) { .hub-container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <h1>The Vesteria Codex</h1>
-    <p class="tagline">An In-Depth Analysis of Player Attributes, Statistics, and Equipment</p>
+    <div class="breadcrumb"><a href="index.html">🏠 Return to Main Codex</a></div>
+    <h1>Core Game Mechanics</h1>
+    <p class="tagline">The engine of Vesteria. Understand the numbers that define power.</p>
 
-    <nav class="sub-nav">
-        <a href="index.html">🏠 Home</a>
-        <a href="#primary-stats">Primary Stats</a>
-        <a href="#secondary-stats">Secondary Stats</a>
-        <a href="#calculations">Stat Calculations</a>
-        <a href="#equipment-attributes">Equipment Attributes</a>
-    </nav>
-
-    <div id="primary-stats">
-        <h2>Primary Stats: The Foundation of Power</h2>
-        <p>Your journey is defined by the choices you make, and none are more crucial than the allocation of your stat points. Upon each level up, you gain <strong>3 points</strong> to invest in four Primary Stats. These stats not only provide direct bonuses but also unlock powerful <strong>Perks</strong> at key thresholds.</p>
-        
-        <h3>Strength (STR)</h3>
-        <p>The embodiment of raw physical power. Favored by <strong>Warriors</strong> and <strong>Hunters</strong>, STR is the cornerstone of any build focused on dealing physical damage. Each point grants <code style="color:#D32F2F;">+0.075%</code> increased physical damage and <code style="color:#D32F2F;">+0.5</code> flat physical damage.</p>
-        <div class="info-card">
-            <h4>Strength Perks</h4>
-            <ul class="perk-list">
-                <li><span class="points-text">5 Points –</span> <span class="perk-name">Heavy Slash:</span> "Double Slash" damage +5</li>
-                <li><span class="points-text">10 Points –</span> <span class="perk-name">First Strike:</span> Damage to full health monsters +20%</li>
-                <li><span class="points-text">20 Points –</span> <span class="perk-name">Endurance:</span> Stamina +1</li>
-                <li><span class="points-text">30 Points –</span> <span class="perk-name">Iron Will:</span> Knockback Reduction +15%, Physical Defense +15</li>
-                <li><span class="points-text">50 Points –</span> <span class="perk-name">Hefty:</span> +20 Physical Attack, +20 Physical Defense</li>
-                <li><span class="points-text">70 Points –</span> <span class="perk-name">Bastion:</span> +30 Physical Defense</li>
-                <li><span class="points-text">90 Points –</span> <span class="perk-name">Swell:</span> +30 Physical Attack</li>
-                <li><span class="points-text">120 Points –</span> <span class="perk-name">Tireless:</span> Stamina depletion from abilities and sprinting reduced by 50%</li>
-                <li><span class="points-text">150 Points –</span> <span class="perk-name">Ruthless:</span> All damage +10%</li>
-            </ul>
+    <div class="hub-container">
+        <div class="hub-card">
+            <h2>Player Stats & Calculations</h2>
+            <p>Explore Primary Stats (STR, DEX, INT, VIT), their powerful Perks, and see the exact formulas that translate points into power.</p>
+            <a href="stats_guide.html" class="button">Analyze Stats</a>
         </div>
-        
-        <h3>Dexterity (DEX)</h3>
-        <p>A measure of agility, speed, and precision. Essential for <strong>Hunters</strong> and <strong>Berserkers</strong> who rely on swift attacks and critical strikes. Each point grants <code style="color:#4CAF50;">+0.45%</code> attack speed and <code style="color:#4CAF50;">~0.1667%</code> critical strike chance.</p>
-        <div class="info-card">
-            <h4>Dexterity Perks</h4>
-            <ul class="perk-list">
-                <li><span class="points-text">5 Points –</span> <span class="perk-name">Agility:</span> Movement Speed +1%</li>
-                <li><span class="points-text">10 Points –</span> <span class="perk-name">Thievery:</span> Monster Money Dropped +15%</li>
-                <li><span class="points-text">20 Points –</span> <span class="perk-name">Surefootedness:</span> Movement Speed +1%, Jump +2</li>
-                <li><span class="points-text">30 Points –</span> <span class="perk-name">Swift:</span> Gain 5% attack speed</li>
-                <li><span class="points-text">50 Points –</span> <span class="perk-name">Fast Hands:</span> Consumable usage speed +40%</li>
-                <li><span class="points-text">70 Points –</span> <span class="perk-name">Unwavering:</span> Reduce ability cooldowns by 15%</li>
-                <li><span class="points-text">90 Points –</span> <span class="perk-name">Deadeye:</span> Critical Strike damage +10%</li>
-                <li><span class="points-text">120 Points –</span> <span class="perk-name">Supersonic:</span> Movement Speed +2%, Jump +3</li>
-                <li><span class="points-text">150 Points –</span> <span class="perk-name">Destrous:</span> Increase your total attack speed by 15%</li>
-            </ul>
-        </div>
-
-        <h3>Intelligence (INT)</h3>
-        <p>The mark of a true spellcaster. INT governs your command of the arcane, empowering <strong>Mages, Paladins,</strong> and <strong>Tricksters</strong>. Each point grants <code style="color:#2196F3;">+0.15%</code> magical damage, <code style="color:#2196F3;">+0.75</code> flat magic damage, and <code style="color:#2196F3;">+1</code> max MP.</p>
-        <div class="info-card">
-            <h4>Intelligence Perks</h4>
-            <ul class="perk-list">
-                <li><span class="points-text">5 Points –</span> <span class="perk-name">Bookworm:</span> Max MP +15, Magic Attack +5</li>
-                <li><span class="points-text">10 Points –</span> <span class="perk-name">Disciplined:</span> XP Gain +5%</li>
-                <li><span class="points-text">20 Points –</span> <span class="perk-name">Persistent:</span> MP Regeneration +20%, Magic Attack +10</li>
-                <li><span class="points-text">30 Points –</span> <span class="perk-name">Charismatic:</span> Reduce shop costs by 20%</li>
-                <li><span class="points-text">50 Points –</span> <span class="perk-name">Resourceful:</span> HP/MP from consumables +30%</li>
-                <li><span class="points-text">70 Points –</span> <span class="perk-name">Reactive:</span> Magic Defense +30</li>
-                <li><span class="points-text">90 Points –</span> <span class="perk-name">Calculated:</span> Max MP +100, MP Regeneration +15%</li>
-                <li><span class="points-text">120 Points –</span> <span class="perk-name">Focused:</span> Magic Attack +30</li>
-                <li><span class="points-text">150 Points –</span> <span class="perk-name">Astral:</span> Ignore 25% of magical defense</li>
-            </ul>
-        </div>
-
-        <h3>Vitality (VIT)</h3>
-        <p>The source of resilience and survivability. A crucial stat for those who wish to stand firm against overwhelming odds, particularly <strong>Knights</strong> and <strong>Warlocks</strong>, by increasing Health, Regeneration, and defensive utility.</p>
-        <div class="info-card">
-            <h4>Vitality Perks</h4>
-            <ul class="perk-list">
-                <li><span class="points-text">5 Points –</span> <span class="perk-name">Regeneration:</span> HP Regeneration +25%</li>
-                <li><span class="points-text">10 Points –</span> <span class="perk-name">Rejuvenation:</span> HP Regeneration +30%</li>
-                <li><span class="points-text">20 Points –</span> <span class="perk-name">Fortitude:</span> +8 DEF</li>
-                <li><span class="points-text">30 Points –</span> <span class="perk-name">Vigor:</span> Area-effect abilities gain +10% Radius</li>
-                <li><span class="points-text">50 Points –</span> <span class="perk-name">Hearty:</span> Max HP +100, HP Regeneration +20%</li>
-                <li><span class="points-text">70 Points –</span> <span class="perk-name">Tenacious:</span> Duration of crowd control effects on you reduced by 25%</li>
-                <li><span class="points-text">90 Points –</span> <span class="perk-name">Hearty II:</span> Max HP +150, HP Regeneration +20%</li>
-                <li><span class="points-text">120 Points –</span> <span class="perk-name">Adaptive:</span> Reduce damage taken by repeated damage from the same instance by 4%, up to 20%</li>
-                <li><span class="points-text">150 Points –</span> <span class="perk-name">Juggernaut:</span> Max HP +10%</li>
-            </ul>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <div id="secondary-stats">
-        <h2>Secondary Stats: The Tangible Effects</h2>
-        <p>These stats are derived from your Primary Stats, gear, and other effects. They represent your character's real-world effectiveness in combat and other activities.</p>
-        <div class="info-card">
-            <h4>Secondary Stat Overview</h4>
-            <ul class="secondary-stats-list">
-                <li><strong>Attack (ATK):</strong> Your total current attack damage, combining level-based increases and your equipped weapon's stats.</li>
-                <li><strong>Defense (DEF):</strong> Your total damage reduction, combining level-based increases and your equipped armor's stats.</li>
-                <li><strong>Movement Speed (SPD) & Jump (JMP):</strong> Your character's mobility. Default values are 18 and 75, respectively.</li>
-                <li><strong>Fortune (Greed / GRD):</strong> Increases the chance for double Mushtoken drops and affects fishing rarity.</li>
-                <li><strong>Physical/Magical Attack Bonus (PYS/MAG):</strong> Percentage damage increases for Physical and Magical attacks, derived from STR and INT.</li>
-                <li><strong>Agility (AGL):</strong> Your attack speed, derived primarily from DEX and gear.</li>
-                <li><strong>Block Chance (BLK):</strong> The chance to block a physical attack, reducing damage by 50%. Influenced by DEX and gear.</li>
-                <li><strong>Critical Strike Chance (CRT):</strong> The chance for a critical hit (default: +50% damage). Influenced by DEX and gear.</li>
-                <li><strong>Warding:</strong> Your magical resistance. Functions as a "magic block," reducing incoming magic damage by a percentage.</li>
-            </ul>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <div id="calculations">
-        <h2>Stat Calculation Deep Dive</h2>
-        <p>For the adventurer who leaves nothing to chance, this section details the precise formulas and progression of each Primary Stat's derived bonuses, extrapolated to 200 points.</p>
-
-        <h4>Strength Calculations</h4>
-        <div class="info-card">
-            <code>PYS Bonus = floor(STR * 0.625)</code> | <code>Stamina = floor(STR * 0.05)</code>
-            <table>
-                <thead><tr><th class="center-align">Points</th><th class="center-align">Physical Attack Bonus (PYS)</th><th class="center-align">Stamina Bonus</th></tr></thead>
-                <tbody>
-                    <tr><td class="center-align">50</td><td class="center-align">31%</td><td class="center-align">2.5</td></tr>
-                    <tr><td class="center-align">100</td><td class="center-align">62%</td><td class="center-align">5.0</td></tr>
-                    <tr><td class="center-align">150</td><td class="center-align">93%</td><td class="center-align">7.5</td></tr>
-                    <tr><td class="center-align">200</td><td class="center-align">125%</td><td class="center-align">10.0</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h4>Dexterity Calculations</h4>
-        <div class="info-card">
-            <code>Attack Speed = DEX * 0.45%</code> | <code>Crit Chance ≈ DEX * 0.1667%</code>
-            <table>
-                <thead><tr><th class="center-align">Points</th><th class="center-align">Attack Speed Bonus</th><th class="center-align">Crit Chance Bonus (Approx.)</th></tr></thead>
-                <tbody>
-                    <tr><td class="center-align">50</td><td class="center-align">22.5%</td><td class="center-align">8.3%</td></tr>
-                    <tr><td class="center-align">100</td><td class="center-align">45.0%</td><td class="center-align">16.7%</td></tr>
-                    <tr><td class="center-align">150</td><td class="center-align">67.5%</td><td class="center-align">25.0%</td></tr>
-                    <tr><td class="center-align">200</td><td class="center-align">90.0%</td><td class="center-align">33.3%</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h4>Intelligence Calculations</h4>
-        <div class="info-card">
-            <code>MAG Bonus = INT * 0.15%</code> | <code>MP Bonus = INT * 1</code>
-            <table>
-                <thead><tr><th class="center-align">Points</th><th class="center-align">Magical Attack Bonus (MAG)</th><th class="center-align">Flat Mana Bonus</th></tr></thead>
-                <tbody>
-                    <tr><td class="center-align">50</td><td class="center-align">7.5%</td><td class="center-align">50</td></tr>
-                    <tr><td class="center-align">100</td><td class="center-align">15.0%</td><td class="center-align">100</td></tr>
-                    <tr><td class="center-align">150</td><td class="center-align">22.5%</td><td class="center-align">150</td></tr>
-                    <tr><td class="center-align">200</td><td class="center-align">30.0%</td><td class="center-align">200</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h4>Vitality Calculations</h4>
-        <div class="info-card">
-            <code>Base HP Bonus = VIT * 9</code> | <code>MP Bonus = VIT * 2</code>
-            <table>
-                <thead><tr><th class="center-align">Points</th><th class="center-align">Base Hit Point (HP) Bonus</th><th class="center-align">Mana Point (MP) Bonus</th></tr></thead>
-                <tbody>
-                    <tr><td class="center-align">50</td><td class="center-align">450</td><td class="center-align">100</td></tr>
-                    <tr><td class="center-align">100</td><td class="center-align">900</td><td class="center-align">200</td></tr>
-                    <tr><td class="center-align">150</td><td class="center-align">1350</td><td class="center-align">300</td></tr>
-                    <tr><td class="center-align">200</td><td class="center-align">1800</td><td class="center-align">400</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <div id="equipment-attributes">
-        <h2>Equipment Attributes</h2>
-        <p>An Equipment Attribute, also referred to as a <strong>Modifier</strong> or <strong>Variant</strong>, is a mechanic in Vesteria that applies a special beneficial or detrimental effect to a piece of equipment. Whenever an enemy drops a weapon or armor, it has a chance to receive an attribute. Players can also use <strong>Modifier Scrolls</strong> to grant attributes, and occasionally, event gifts may reward items with them. There are 8 attributes for weaponry and 7 for armory.</p>
-        
-        <div class="info-card">
-            <h4>Attribute Overview</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Attribute</th>
-                        <th>Effect</th>
-                        <th class="center-align">Chance</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>(Nothing)</strong></td>
-                        <td>None</td>
-                        <td class="center-align">~70.1%</td>
-                        <td>Standard-issue gear. No bells or whistles.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Dull or Tattered</strong></td>
-                        <td>Decreases weapon attack or armor defense.</td>
-                        <td class="center-align">40%</td>
-                        <td>Bosses and minibosses cannot drop items with this attribute.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Fierce (STR)</strong></td>
-                        <td>Adds or boosts Strength.</td>
-                        <td class="center-align">6.75%</td>
-                        <td>Armor-STR = LvlReq * 1/5. Weapon-STR = LvlReq * 3/11.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Vibrant (VIT)</strong></td>
-                        <td>Adds or boosts Vitality.</td>
-                        <td class="center-align">6.75%</td>
-                        <td>Armor-VIT = LvlReq * 1/5. Weapon-VIT = LvlReq * 3/11.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Keen (INT)</strong></td>
-                        <td>Adds or boosts Intelligence.</td>
-                        <td class="center-align">6.75%</td>
-                        <td>Armor-INT = LvlReq * 1/5. Weapon-INT = LvlReq * 3/11.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Swift (DEX)</strong></td>
-                        <td>Adds or boosts Dexterity.</td>
-                        <td class="center-align">6.75%</td>
-                        <td>Armor-DEX = LvlReq * 1/5. Weapon-DEX = LvlReq * 3/11.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Pristine</strong></td>
-                        <td>Moderately boosts weapon ATK / armor DEF. Adds +8% XP gain.</td>
-                        <td class="center-align">3%</td>
-                        <td>ATK/DEF = LvlReq * 4/25. -25% chance of being destroyed by a scroll.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Legendary</strong></td>
-                        <td>Greatly boosts weapon ATK / armor DEF. Adds +12% XP gain.</td>
-                        <td class="center-align">0.1%</td>
-                        <td>ATK/DEF = LvlReq * 9/25. -50% chance of being destroyed by a scroll. The rarest and 3rd strongest attribute.</td>
-                    </tr>
-                     <tr>
-                        <td><strong>Mythic</strong></td>
-                        <td>Massively boosts weapon ATK/DEF. Adds +10% crit chance (weapons) or headgear stat. +12% XP gain.</td>
-                        <td class="center-align">Event Only</td>
-                        <td>Immune to Dark/Cursed Scrolls. Cannot be dropped or picked up on death. The strongest attribute.</td>
-                    </tr>
-                     <tr>
-                        <td><strong>Original</strong></td>
-                        <td>Boosts EXP same as Legendary. Soulbound.</td>
-                        <td class="center-align">Creator Only</td>
-                        <td>Granted only to the item's concept artist/modeler. Immune to destruction from scrolls. Cannot be dropped.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <h4 style="margin-top:40px;">Attribute Trivia</h4>
-        <div class="info-card">
-            <ul class="trivia-list">
-                <li>Weapon and armor "Variants" change in power according to the current level of the weapon and are empowered by reforging.</li>
-                <li>The modifier for Legendary is 9/25 of the weapon's base ATK, and for Pristine it's 4/25 (rounded).</li>
-                <li>Similarly, the modifier for Legendary armor is 9/25 of the armor's base defense, and for Pristine it's 4/25.</li>
-                <li>Equipment Attributes were added back into the game on May 14th, 2022, alongside the Warrior Update.</li>
-                <li>Only dropped weapons/armor can have attributes, with rare exceptions like the Swift Swirling Greatsword, Pristine Sword, and Pristine Staff.</li>
-                <li>Items from shops or quests cannot gain an equipment attribute.</li>
-            </ul>
+        <div class="hub-card">
+            <h2>Gear & Consumables</h2>
+            <p>Uncover every Equipment Attribute, learn about the rare Scrolls used to modify gear, and browse the list of special Gifts and event items.</p>
+            <a href="equipment_guide.html" class="button">Examine Gear</a>
         </div>
     </div>
 
     <div class="footer">
-        <p>This guide was forged through a unique collaboration with Vesteria expert Dios_mogs.<br>All information has been rigorously verified for accuracy to create the ultimate resource for aspiring heroes.</p>
+        <p>This guide was forged through a unique collaboration with Vesteria expert <em>Dios_mogs</em>.</p>
     </div>
-
 </div>
-
 </body>
 </html>
