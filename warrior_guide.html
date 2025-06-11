@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vesteria Codex - The Warrior's Path</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            font-size: 3em; text-align: center; margin-bottom: 5px;
+        }
+        .tagline {
+            font-size: 1.2em; text-align: center; font-style: italic; color: #606770; margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.2em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-top: 50px;
+        }
+
+        h3 {
+            font-size: 1.8em; margin-top: 40px; color: #D32F2F; /* Warrior Red */
+        }
+        
+        h4 {
+            font-size: 1.4em; margin-top: 30px; border-left: 4px solid #D32F2F; padding-left: 15px;
+        }
+
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background-color: #f7f9fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 30px 0;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .sub-nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            background-color: #e9eaec;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .sub-nav a:hover {
+            background-color: #D32F2F;
+            color: #ffffff;
+        }
+
+        .section-divider {
+            border: 0;
+            height: 2px;
+            background: #e1e4e8;
+            margin: 60px 0;
+        }
+
+        .build-card {
+            background-color: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .two-column-layout {
+            display: flex;
+            gap: 40px;
+        }
+        .two-column-layout > div {
+            flex: 1;
+        }
+
+        strong, .perk-name {
+            font-weight: 600;
+            color: #34495e;
+        }
+        .perk-name {
+            color: #c0392b; /* Darker Red */
+        }
+
+        ul {
+            list-style-type: '✔  ';
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background-color: #e9eaec;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid #e1e1e1;
+            padding-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .two-column-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .container { padding: 20px; }
+            h1 { font-size: 2.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Warrior's Path</h1>
+    <p class="tagline">A Guide to Vesteria's Stalwart Vanguard</p>
+
+    <nav class="sub-nav">
+        <a href="index.html">🏠 Home</a>
+        <a href="#base-warrior">Base Warrior</a>
+        <a href="#paladin">Paladin</a>
+        <a href="#berserker">Berserker</a>
+        <a href="#knight">Knight</a>
+    </nav>
+
+    <div id="base-warrior">
+        <h2>Part I: The Foundations of the Warrior (Levels 1-29)</h2>
+        <p>Upon reaching Level 10, swearing allegiance to the Warriors at the Redwood Stronghold grants you a **significant 50% maximum HP boost**, defining you as a front-line combatant from the start. Unlike other classes, a base Warrior **cannot use an off-hand item**. Your Warrior Rune is a utility item that teleports you to the stronghold.</p>
+
+        <h4>Core Skill Kit</h4>
+        <ul>
+            <li><strong>Triple Slash (Passive):</strong> Your primary three-hit M1 combo.</li>
+            <li><strong>Spin Slash (Active):</strong> A classic AoE spin attack.</li>
+            <li><strong>Startling Slash (Active):</strong> A magical ground-blast, giving early access to magic damage.</li>
+            <li><strong>Combat Roll (Active):</strong> A defensive roll providing a massive 65% damage reduction.</li>
+            <li><strong>Parry (Active):</strong> A high-skill block that negates damage and delivers a counter-attack.</li>
+            <li><strong>Ground Slam (Active):</strong> A high-damage AoE leap slam.</li>
+        </ul>
+
+        <h4>Leveling Stat & Gear Progression (Levels 10-30)</h4>
+        <div class="build-card">
+            <div class="two-column-layout">
+                <div>
+                    <strong>Stat Priority:</strong><br>
+                    <code>Full Strength (STR)</code>
+                    <p>Maximizes your physical damage, setting a strong foundation for any future subclass.</p>
+                </div>
+                <div>
+                    <strong>Key Gear to Acquire:</strong>
+                    <ul>
+                        <li><strong>Weapon:</strong> Coral Club</li>
+                        <li><strong>Headgear:</strong> Ratking Bucket</li>
+                        <li><strong>Armor:</strong> Snowy Bandit Armor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="subclasses">
+        <h2>Part II: Choosing Your Vow (Level 30+)</h2>
+        <p>At Level 30, you will specialize into one of three distinct subclasses. This permanent choice will redefine your role on the battlefield. A build is a **pre-fight commitment**.</p>
+        
+        <div id="paladin" class="subclass-section">
+            <h3>The Paladin - The Holy Hybrid</h3>
+            <p>The Paladin is a holy warrior who blends martial prowess with divine magic, able to deal damage, heal allies, and control the battlefield with sacred power.</p>
+            
+            <h4>Paladin Build 1: The Int Paladin (Glass Cannon Spell-Slinger)</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>10-30 STR → rest INT</code><br><small>Minimal STR for gear requirements, all other points into INT to maximize spell damage.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>A high-risk build using **Gladiator Armor** for its <span class="perk-name">Reckless</span> perk (+20% damage dealt & received). Use the **Snel Helm** for max INT, and the **Pumpkin Brute Boots** to turn your Combat Roll into another offensive spell.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Paladin Build 2: The Str Paladin (The Overwhelming Crusader)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>Full Strength (STR)</code><br><small>Focuses on maximizing the physical damage of every greatweapon swing.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>The **Ghostflame Greataxe** is the centerpiece. Its <span class="perk-name">Tormenting Consecrate</span> perk creates a damage-amplification field, making your powerful STR-based attacks hit even harder. The **First Mate's Anchor** is an alternative for the highest raw physical damage in the game.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="berserker" class="subclass-section">
+            <h3>The Berserker - The Furious Damage-Dealer</h3>
+            <p>The Berserker is the ultimate glass cannon, forgoing all defense for the highest sustained and AoE damage in the game. Its core mechanic, the <span class="perk-name">Unrelenting</span> perk, provides damage and lifesteal that changes dynamically based on your current HP.</p>
+            
+            <h4>Berserker Build 1: The M1 Berserker (Unrelenting Assailant)</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>150 STR → 150 DEX → rest STR</code><br><small>Hits crucial STR and DEX perks for a blend of high damage and extreme attack speed.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Weapon synergy is key. Combine the **Cholla Blade** and **Decorated Antler** to turn your Triple Slash into an AoE event. Use **Azariah's Edge** for stacking attack speed on crits.
+                    </div>
+                </div>
+            </div>
+            
+            <h4>Berserker Build 2: The Ability Berserker (Whirlwind of Steel)</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>90 or 150 DEX → rest STR</code><br><small>DEX is for unlocking damage perks; your main damage comes from STR-scaling abilities.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Requires the **Jade Blade**. Its <span class="perk-name">Jade Blast</span> perk transforms your Startling Slash into a devastating multi-hit STR nuke. This is best paired with the **Gladiator Armor** for a +20% boost to your entire ability rotation.
+                    </div>
+                </div>
+            </div>
+            
+            <h4>Berserker Build 3: The Hybrid Berserker (The Perfect Storm)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>90 DEX → rest STR</code><br><small>An endgame aspiration that relies on achieving high Crit Chance from rare Cursed Scroll upgrades on weapons.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Combine crit-scrolled weapons like **Azariah's Edge** and **Jade Blade**. Use the **Gladiator Armor**, as its +20% damage bonus applies to both your M1s and abilities, creating a storm of damage with no downtime.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Berserker Build 4: The Cryo Berserker (AoE Stacking Specialist)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>Full Dexterity (DEX)</code><br><small>Damage comes from the 10% max HP burst of Cryo Cascades; DEX provides the Attack Speed to apply stacks faster.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Requires a Cryo weapon (**Frozen Moko Club** or **Frozen Mushroom Sword**). Use the **Gladiator Armor**'s +20% damage bonus to amplify the final Cryo burst. The Berserker's cleaving M1 attacks are perfect for applying stacks to large groups.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="knight" class="subclass-section">
+            <h3>The Knight - The Unbreakable Protector</h3>
+            <p>The Knight is the quintessential tank, defined by their unique ability to wield a shield and their <span class="perk-name">Knight's Might</span> perk, which increases ability damage based on their bonus HP.</p>
+            
+            <h4>Knight Build 1: The Block/Warding Knight (Impenetrable Fortress)</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>90 STR → rest VIT</code><br><small>90 STR unlocks the Bustle damage perk; VIT provides maximum survivability and fuels your damage.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>A build focused on Block Chance. The core is the three-piece combo of **Urchin Helmet**, **Tuaa Shield**, and **Hobo Armor** for a massive +45% Block Chance. The **Fallen Blade** is the ideal weapon, as its damage scales with your high VIT stat.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Knight Build 2: The Stat Knight (The Balanced Juggernaut)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>Half VIT, Half STR</code><br><small>A perfect 50/50 split creates an ultimate bruiser who is both extremely tanky and a major damage threat.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Turn defense into offense. The **Valkyrie Helmet** applies a permanent slow to melee attackers. The **Haunted Sigil of Malisis** builds stacks as you take damage, allowing you to unleash a massive burst. The **Soulburn Edge** turns Ground Slam into a persistent fire AoE.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This guide was forged through a unique collaboration with Vesteria expert Dios_mogs.<br>All information has been rigorously verified for accuracy to create the ultimate resource for aspiring heroes.</p>
+    </div>
+
+</body>
+</html>
