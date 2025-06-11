@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vesteria Codex - The Mage's Path</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            font-size: 3em; text-align: center; margin-bottom: 5px;
+        }
+        .tagline {
+            font-size: 1.2em; text-align: center; font-style: italic; color: #606770; margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.2em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-top: 50px;
+        }
+
+        h3 {
+            font-size: 1.8em; margin-top: 40px; color: #2196F3; /* Mage Blue */
+        }
+        
+        h4 {
+            font-size: 1.4em; margin-top: 30px; border-left: 4px solid #2196F3; padding-left: 15px;
+        }
+
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background-color: #f7f9fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 30px 0;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .sub-nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            background-color: #e9eaec;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .sub-nav a:hover {
+            background-color: #2196F3;
+            color: #ffffff;
+        }
+
+        .section-divider {
+            border: 0;
+            height: 2px;
+            background: #e1e4e8;
+            margin: 60px 0;
+        }
+
+        .build-card {
+            background-color: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .two-column-layout {
+            display: flex;
+            gap: 40px;
+        }
+        .two-column-layout > div {
+            flex: 1;
+        }
+
+        strong, .perk-name {
+            font-weight: 600;
+            color: #34495e;
+        }
+        .perk-name {
+            color: #1976D2; /* Darker Blue */
+        }
+
+        ul {
+            list-style-type: '✔  ';
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background-color: #e9eaec;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+        
+        .disclaimer {
+            background-color: #fffbe6;
+            border: 1px solid #ffe58f;
+            border-radius: 8px;
+            padding: 15px;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid #e1e1e1;
+            padding-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .two-column-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .container { padding: 20px; }
+            h1 { font-size: 2.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Mage's Path</h1>
+    <p class="tagline">An In-Depth Guide to the Masters of Staff, Verse, and Primeval Forces</p>
+
+    <nav class="sub-nav">
+        <a href="index.html">🏠 Home</a>
+        <a href="#base-mage">Base Mage</a>
+        <a href="#warlock">Warlock</a>
+        <a href="#sorcerer">Sorcerer</a>
+        <a href="#cleric">Cleric</a>
+        <a href="#songweaver">Songweaver</a>
+        <a href="#shadowmancer">Shadowmancer</a>
+    </nav>
+
+    <div id="base-mage">
+        <h2>Part I: The Foundations of the Arcane (Levels 1-29)</h2>
+        <p>The Mage is Vesteria's oldest and most powerful magical faction. To begin your journey, reach Level 10 and speak with **Representative Jill** in Great Crossroads or seek out **Greybeard the Old** at the Mage's exclusive hub, the **Tree of Life**. Your power will primarily scale with **Intelligence (INT)**.</p>
+
+        <h4>Core Skill Kit</h4>
+        <ul>
+            <li><strong>Zap:</strong> Summons close-range lightning bolts that follow your cursor.</li>
+            <li><strong>Mana Bomb:</strong> Fires a ball of mana that explodes on impact.</li>
+            <li><strong>Thundercat:</strong> Calls down bolts of lightning from the sky at your cursor's location.</li>
+            <li><strong>Blink:</strong> An instant teleport for mobility.</li>
+        </ul>
+        
+        <h4>Core Mechanic: Stat-Based Skill Variants</h4>
+        <p>A Mage's core skills can transform based on their stat allocation, creating unique hybrid builds. This requires at least <strong>30 points</strong> in the specified stat.</p>
+        <div class="build-card">
+            <div class="two-column-layout">
+                <div>
+                    <strong>Mana Bomb Variants:</strong>
+                    <ul>
+                       <li><strong>Sonic Bomb (STR):</strong> A faster, lower cooldown, piercing projectile.</li>
+                       <li><strong>Multi Bomb (DEX):</strong> A spread-shot of several smaller bombs, perfect for applying on-hit effects like <span class="perk-name">Venom Bomb</span>.</li>
+                       <li><strong>Pure Bomb (INT):</strong> The standard version with a larger explosion.</li>
+                    </ul>
+                </div>
+                 <div>
+                    <strong>Blink Variants:</strong>
+                    <ul>
+                        <li><strong>Sonic Blink (STR):</strong> Becomes a damaging spell, hitting enemies you pass through. Upgrades to <span class="perk-name">Supersonic Blink</span> at 70 STR.</li>
+                        <li><strong>Holy Magic (Cleric):</strong> A subclass-specific variant that increases Blink's range by 50%.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h4>Leveling Stat & Gear Progression (Levels 10-30)</h4>
+        <div class="build-card">
+            <div class="two-column-layout">
+                <div>
+                    <strong>Stat Priority:</strong><br>
+                    <code>Full Intelligence (INT)</code>
+                    <p>Maximizes your early spell damage and provides a solid mana pool for all your abilities.</p>
+                </div>
+                <div>
+                    <strong>Key Gear to Acquire:</strong>
+                    <ul>
+                        <li><strong>Weapon:</strong> Webbed Staff</li>
+                        <li><strong>Off-hand:</strong> The Enchiridion</li>
+                        <li><strong>Armor:</strong> Snowy Bandit Robes</li>
+                        <li><strong>Boots:</strong> Explorer's Yeti Boots</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="subclasses">
+        <h2>Part II: Choosing Your Calling (Level 30+)</h2>
+        <p>At Level 30, your journey diverges. You must choose one of the five distinct specializations. This choice is permanent and will redefine your role on the battlefield. A build is a **pre-fight commitment**.</p>
+        
+        <div id="warlock" class="subclass-section">
+            <h3>The Warlock - The Blood Reaper</h3>
+            <p>A durable, dark magic user who sacrifices their own health to fuel powerful life-draining abilities and status effects. Their unique <span class="perk-name">Blood Magic</span> perk increases their damage in prolonged fights, rewarding a battle of attrition.</p>
+            
+            <h4>Warlock Build: The Life-Tapped Juggernaut</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>10 STR → 20 DEX → rest Half INT/VIT</code><br><small>Balances survivability and damage by perfectly splitting INT and VIT, maximizing the effect of key gear perks.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>This build leverages the <span class="perk-name">Equilibrium</span> perk on **Robes of Balance** with its split stats. Use the **Jade Staff** for sustain, **Tomestone** for burst, **Dragon Hat** to modify Pillage, and **Yeti Boots** for unmatched regen.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sorcerer" class="subclass-section">
+            <h3>The Sorcerer - The Elemental Cataclysm</h3>
+            <p>The Sorcerer is a "glass cannon" who wields destructive elemental spells. Their gameplay is a two-step process: prime a target with any spell to apply <span class="perk-name">Lingering Magic</span>, then detonate it with an elemental ability to trigger powerful bonus effects.</p>
+            
+            <h4>Sorcerer Build 1: The Relentless Sorcerer (Cooldown DPS)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>70 DEX → rest INT</code><br><small>Reaches the "Unwavering" perk for 15% CDR, allowing for a constant barrage of spells.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Uses the **Wise Beard** for a massive +40 INT. The **Ornate Staff**'s <span class="perk-name">Divine Will</span> perk adds constant damage, while **Capra's Robes** allows for controlled burst via <span class="perk-name">Mana Detonation</span>.
+                    </div>
+                </div>
+            </div>
+            
+            <h4>Sorcerer Build 2: The Wicked Sorcerer (Crit DPS)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>90 DEX → rest INT</code><br><small>A high-risk build focused on chaining critical hits. Requires high base crit from gear to function.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Requires the **Wicked Witch Hat** and **Wicked Witch Robes**. These items grant stacking Crit Damage and Crit Chance, respectively. Use a weapon with the **"Keen"** prefix to reliably start the chain reaction.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cleric" class="subclass-section">
+            <h3>The Cleric - The Divine Healer</h3>
+            <p>The indispensable holy support class of Vesteria. Clerics use their abilities to heal allies, which in turn powers up their own magical damage thanks to the <span class="perk-name">Holy Magic</span> perk. **Resurrect** has a fixed 120s cooldown.</p>
+            
+            <h4>Cleric Build 1: The Cleric of Judgment (DPS)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>10 STR → rest INT</code> or <code>90 DEX (for Crit)</code><br><small>Focus on raw power or a crit-based build if you have the gear.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>For raw power, use **Wise Beard** and **Ornate Staff**. For a crit build, assemble the **Wicked Witch Hat/Robes** and **"Keen"** prefix gear. The goal is to maximize damage while using healing for self-buffs.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Cleric Build 2: The Divine Anchor (Support)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>10 STR → 30 VIT → rest INT</code><br><small>30 VIT is crucial for the <span class="perk-name">Vigor</span> perk, increasing your healing radius by 10%.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>A selfless healer. Use the **Jade Staff** for AoE heals. The **Elf Hat** and **Elf Robes** grant unparalleled healing range at the cost of survivability, which **must** be offset by **Explorer's Yeti Boots**.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="songweaver" class="subclass-section">
+            <h3>The Songweaver - The Supportive Virtuoso</h3>
+            <p>A pure support class that conducts the flow of battle with magical songs. Gameplay is a complex performance of building **Encore** stacks to empower your abilities, and **Reverb** stacks to control enemies.</p>
+
+            <h4>Songweaver Build 1: The Heal Songweaver</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>30 VIT → rest INT</code><br><small>30 VIT for the crucial +10% Ability Radius from the <span class="perk-name">Vigor</span> perk.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>A selfless sustain build. The **Monarch Keepers Tome** is mandatory, massively buffing ally healing. This is combined with the **Whimsical Robes** for stacking heal/shield effectiveness.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Songweaver Build 2: The Buff/DPS Songweaver</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>30 VIT → rest INT</code><br><small>The larger radius from VIT ensures your buffs, like <span class="perk-name">Encored Tempo</span>, hit the entire party.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Focuses on empowering allies. The **Elf Hat** grants maximum range for buffs. The goal is to apply **Tempo** and use your **Reverb** perk's <span class="perk-name">Dissonate</span> effect to massively amplify your party's damage.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="shadowmancer" class="subclass-section">
+            <h3>[UPCOMING] The Shadowmancer - The Forbidden Master</h3>
+            <p class="disclaimer"><strong>Disclaimer:</strong> The Shadowmancer is an upcoming subclass. All information is based on developer showcases and is subject to change.</p>
+            <p>A master of forbidden arts with two distinct forms. The Mage-Form focuses on summoning Shade minions, while the Shade-Form transforms the caster into a hyper-aggressive melee assassin. This class uses Mana and a unique resource, **Shadow Points (SP)**.</p>
+            
+            <h4>Abilities Overview</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Mage-Form (Summoner):</strong>
+                        <ul>
+                            <li><strong>Extend Shadow:</strong> Inflicts a damage-reducing debuff.</li>
+                            <li><strong>Rend Shadow:</strong> Recharges your SP.</li>
+                            <li><strong>Subjugate:</strong> Revives slain enemies as temporary minions.</li>
+                            <li><strong>Summon Shade:</strong> Your core ability to summon up to 5 permanent minions.</li>
+                            <li><strong>Frenzy:</strong> Massively buffs your summoned Shades.</li>
+                            <li><strong>Shade Binding:</strong> Transform into Shade-Form.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Shade-Form (Melee Assassin):</strong>
+                         <ul>
+                            <li><strong>Exalted Nightmare:</strong> Inflicts Fear on nearby enemies.</li>
+                            <li><strong>Exalted Leap:</strong> A forward-dashing attack.</li>
+                            <li><strong>Exalted Rampage:</strong> A frenzy that increases attack speed and provides lifesteal.</li>
+                            <li><strong>Exalted Shadow Assault:</strong> Teleport behind an enemy to apply debuffs.</li>
+                            <li><strong>Shade Claws (Passive):</strong> Alters your M1 attacks. Weapon perks are disabled.</li>
+                            <li><strong>Shade Release:</strong> Transform back to Mage-Form.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>This guide was forged through a unique collaboration with Vesteria expert Dios_mogs.<br>All information has been rigorously verified for accuracy to create the ultimate resource for aspiring heroes.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
