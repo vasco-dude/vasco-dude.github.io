@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Vesteria Codex - Core Mechanics</title>
     <style>
-        /* --- Basic Page Styles from Provided Template --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #f0f2f5;
@@ -13,273 +12,260 @@
             margin: 0;
             padding: 20px;
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 960px;
-            margin: 40px auto;
+            max-width: 1000px;
+            margin: 20px auto;
             background-color: #ffffff;
             border-radius: 8px;
-            padding: 40px;
+            padding: 30px 50px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        /* --- Custom Typography and Structure for this Page --- */
-        .main-title {
-            font-size: 3em;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 10px;
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            letter-spacing: -0.5px;
         }
 
-        .tagline {
-            font-size: 1.2em;
-            text-align: center;
-            font-style: italic;
-            color: #606770;
-            margin-bottom: 40px;
+        h1 { font-size: 3em; text-align: center; margin-bottom: 5px; }
+        .tagline { font-size: 1.2em; text-align: center; font-style: italic; color: #606770; margin-bottom: 30px; }
+
+        h2 { font-size: 2.2em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-top: 50px; }
+        h3 { font-size: 1.8em; margin-top: 40px; color: #78909C; /* Core Mechanics Blue-Grey */ }
+        h4 { font-size: 1.4em; margin-top: 30px; border-left: 4px solid #78909C; padding-left: 15px; }
+
+        .sub-nav {
+            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
+            background-color: #f7f9fc; padding: 15px; border-radius: 8px;
+            margin: 30px 0; position: sticky; top: 10px; z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
+
+        .sub-nav a {
+            text-decoration: none; color: #2c3e50; background-color: #e9eaec;
+            padding: 8px 15px; border-radius: 20px; font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .sub-nav a:hover { background-color: #78909C; color: #ffffff; }
+
+        .section-divider { border: 0; height: 2px; background: #e1e4e8; margin: 60px 0; }
+
+        .info-card {
+            background-color: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px;
+            padding: 25px; margin-top: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        strong, .perk-name, .points-text {
+            font-weight: 600; color: #34495e;
+        }
+        .perk-name { color: #5b7da8; }
+        .points-text { color: #1d3c6e; }
+
+        ul.perk-list { list-style-type: none; padding-left: 0; }
+        ul.perk-list li { margin-bottom: 10px; padding: 8px 12px; background-color: #f8f9fa; border-radius: 4px; }
         
-        .section-title {
-            font-size: 2.2em;
-            font-weight: 600;
-            margin-top: 50px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e1e1e1;
-        }
-        
-        .subsection-title {
-            font-size: 1.6em;
-            font-weight: 600;
-            color: #333;
-            margin-top: 40px;
-        }
-
-        .stat-description {
-            font-size: 1.05em;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        .perk-list, .secondary-stat-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .perk-list li, .secondary-stat-list li {
-            background-color: #f7f7f7;
-            border-radius: 6px;
-            padding: 12px 15px;
-            margin-bottom: 8px;
-            border-left: 4px solid #78909C;
-        }
-        
-        .perk-list .points {
-            font-weight: 700;
-            color: #1d3c6e;
-        }
-        
-        .perk-list .perk-name {
-            font-weight: 600;
-        }
-
-        /* --- Table Styles --- */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #e1e1e1;
-            padding: 12px;
-            text-align: left;
-        }
-
-        thead {
-            background-color: #f0f2f5;
-            font-weight: 600;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+        ul.secondary-stats-list { list-style-type: '➡  '; padding-left: 20px; }
+        ul.secondary-stats-list li { margin-bottom: 8px; }
 
         code {
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            background-color: #e9eaec;
-            padding: .2em .4em;
-            border-radius: 3px;
-            font-size: 0.9em;
+            background-color: #e9eaec; padding: 3px 6px; border-radius: 4px;
+            font-family: "Courier New", Courier, monospace; font-size: 0.95em;
+        }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #e1e4e8; padding: 10px 15px; text-align: center; }
+        thead { background-color: #f7f9fc; font-weight: 600; }
+        tbody tr:nth-child(even) { background-color: #f8f9fa; }
+
+        .footer {
+            text-align: center; margin-top: 60px; border-top: 1px solid #e1e1e1;
+            padding-top: 30px; font-size: 0.9em; color: #888;
         }
 
-        .home-link {
-            display: block;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            color: #007bff;
-            font-size: 1.1em;
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 2.5em; }
+            .sub-nav { position: static; }
         }
-
     </style>
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
+    <h1>Core Mechanics</h1>
+    <p class="tagline">An In-Depth Analysis of Player Attributes and Derived Statistics</p>
 
-        <h1 class="main-title">Core Mechanics</h1>
-        <p class="tagline">An In-Depth Analysis of Player Statistics</p>
-        <a href="index.html" class="home-link">← Return to Main Codex</a>
+    <nav class="sub-nav">
+        <a href="index.html">🏠 Home</a>
+        <a href="#primary-stats">Primary Stats</a>
+        <a href="#secondary-stats">Secondary Stats</a>
+        <a href="#calculations">Stat Calculations</a>
+    </nav>
 
-        <p class="stat-description">
-            Welcome, Adventurer, to a foundational study of the very essence of your power. Understanding stats is the key to unlocking your full potential. Players are granted <strong>3 stat points upon reaching each new level</strong>, allowing for deep customization. By level 10, you will have accumulated <strong>27 points</strong> to begin shaping your legend.
-        </p>
-
-        <!-- =========== PRIMARY STATS =========== -->
-        <h2 class="section-title" id="primary-stats">Primary Stats</h2>
+    <div id="primary-stats">
+        <h2>Primary Stats: The Foundation of Power</h2>
+        <p>Your journey is defined by the choices you make, and none are more crucial than the allocation of your stat points. Upon each level up, you gain <strong>3 points</strong> to invest in four Primary Stats. These stats not only provide direct bonuses but also unlock powerful <strong>Perks</strong> at key thresholds.</p>
         
-        <!-- STRENGTH -->
-        <h3 class="subsection-title">Strength (STR)</h3>
-        <p class="stat-description">The embodiment of raw physical power, favored by <strong>Warriors</strong> and <strong>Hunters</strong>. Each point grants <code style="color:#D32F2F;">+0.075%</code> increased physical damage and <code style="color:#D32F2F;">+0.5</code> flat physical damage.</p>
-        <ul class="perk-list">
-            <li><span class="points">5 Points – Heavy Slash:</span> "Double Slash" damage +5</li>
-            <li><span class="points">10 Points – First Strike:</span> Damage to full health monsters +20%</li>
-            <li><span class="points">20 Points – Endurance:</span> Stamina +1</li>
-            <li><span class="points">30 Points – Iron Will:</span> Knockback Reduction +15%, Physical Defense +15</li>
-            <li><span class="points">50 Points – Hefty:</span> +20 Physical Attack, +20 Physical Defense</li>
-            <li><span class="points">70 Points – Bastion:</span> +30 Physical Defense</li>
-            <li><span class="points">90 Points – Swell:</span> +30 Physical Attack</li>
-            <li><span class="points">120 Points – Tireless:</span> Stamina depletion from abilities and sprinting reduced by 50%</li>
-            <li><span class="points">150 Points – Ruthless:</span> All damage +10%</li>
-        </ul>
+        <h3>Strength (STR)</h3>
+        <p>The embodiment of raw physical power. Favored by <strong>Warriors</strong> and <strong>Hunters</strong>, STR is the cornerstone of any build focused on dealing physical damage. Each point grants <code style="color:#D32F2F;">+0.075%</code> increased physical damage and <code style="color:#D32F2F;">+0.5</code> flat physical damage.</p>
+        <div class="info-card">
+            <h4>Strength Perks</h4>
+            <ul class="perk-list">
+                <li><span class="points-text">5 Points –</span> <span class="perk-name">Heavy Slash:</span> "Double Slash" damage +5</li>
+                <li><span class="points-text">10 Points –</span> <span class="perk-name">First Strike:</span> Damage to full health monsters +20%</li>
+                <li><span class="points-text">20 Points –</span> <span class="perk-name">Endurance:</span> Stamina +1</li>
+                <li><span class="points-text">30 Points –</span> <span class="perk-name">Iron Will:</span> Knockback Reduction +15%, Physical Defense +15</li>
+                <li><span class="points-text">50 Points –</span> <span class="perk-name">Hefty:</span> +20 Physical Attack, +20 Physical Defense</li>
+                <li><span class="points-text">70 Points –</span> <span class="perk-name">Bastion:</span> +30 Physical Defense</li>
+                <li><span class="points-text">90 Points –</span> <span class="perk-name">Swell:</span> +30 Physical Attack</li>
+                <li><span class="points-text">120 Points –</span> <span class="perk-name">Tireless:</span> Stamina depletion from abilities and sprinting reduced by 50%</li>
+                <li><span class="points-text">150 Points –</span> <span class="perk-name">Ruthless:</span> All damage +10%</li>
+            </ul>
+        </div>
         
-        <!-- DEXTERITY -->
-        <h3 class="subsection-title">Dexterity (DEX)</h3>
-        <p class="stat-description">A measure of agility, speed, and precision, essential for <strong>Hunters</strong> and <strong>Berserkers</strong>. Each point grants <code style="color:#4CAF50;">+0.45%</code> attack speed and <code style="color:#4CAF50;">~0.1667%</code> critical strike chance.</p>
-        <ul class="perk-list">
-            <li><span class="points">5 Points – Agility:</span> Movement Speed +1%</li>
-            <li><span class="points">10 Points – Thievery:</span> Monster Money Dropped +15%</li>
-            <li><span class="points">20 Points – Surefootedness:</span> Movement Speed +1%, Jump +2</li>
-            <li><span class="points">30 Points – Swift:</span> Gain 5% attack speed</li>
-            <li><span class="points">50 Points – Fast Hands:</span> Consumable usage speed +40%</li>
-            <li><span class="points">70 Points – Unwavering:</span> Reduce ability cooldowns by 15%</li>
-            <li><span class="points">90 Points – Deadeye:</span> Critical Strike damage +10%</li>
-            <li><span class="points">120 Points – Supersonic:</span> Movement Speed +2%, Jump +3</li>
-            <li><span class="points">150 Points – Destrous:</span> Increase your total attack speed by 15%</li>
-        </ul>
+        <h3>Dexterity (DEX)</h3>
+        <p>A measure of agility, speed, and precision. Essential for <strong>Hunters</strong> and <strong>Berserkers</strong> who rely on swift attacks and critical strikes. Each point grants <code style="color:#4CAF50;">+0.45%</code> attack speed and <code style="color:#4CAF50;">~0.1667%</code> critical strike chance.</p>
+        <div class="info-card">
+            <h4>Dexterity Perks</h4>
+            <ul class="perk-list">
+                <li><span class="points-text">5 Points –</span> <span class="perk-name">Agility:</span> Movement Speed +1%</li>
+                <li><span class="points-text">10 Points –</span> <span class="perk-name">Thievery:</span> Monster Money Dropped +15%</li>
+                <li><span class="points-text">20 Points –</span> <span class="perk-name">Surefootedness:</span> Movement Speed +1%, Jump +2</li>
+                <li><span class="points-text">30 Points –</span> <span class="perk-name">Swift:</span> Gain 5% attack speed</li>
+                <li><span class="points-text">50 Points –</span> <span class="perk-name">Fast Hands:</span> Consumable usage speed +40%</li>
+                <li><span class="points-text">70 Points –</span> <span class="perk-name">Unwavering:</span> Reduce ability cooldowns by 15%</li>
+                <li><span class="points-text">90 Points –</span> <span class="perk-name">Deadeye:</span> Critical Strike damage +10%</li>
+                <li><span class="points-text">120 Points –</span> <span class="perk-name">Supersonic:</span> Movement Speed +2%, Jump +3</li>
+                <li><span class="points-text">150 Points –</span> <span class="perk-name">Destrous:</span> Increase your total attack speed by 15%</li>
+            </ul>
+        </div>
 
-        <!-- INTELLIGENCE -->
-        <h3 class="subsection-title">Intelligence (INT)</h3>
-        <p class="stat-description">Governs your command of the arcane, empowering <strong>Mages, Paladins,</strong> and <strong>Tricksters</strong>. Each point grants <code style="color:#2196F3;">+0.15%</code> increased magical damage, <code style="color:#2196F3;">+0.75</code> flat magical damage, and <code style="color:#2196F3;">+1</code> maximum MP.</p>
-        <ul class="perk-list">
-            <li><span class="points">5 Points – Bookworm:</span> Max MP +15, Magic Attack +5</li>
-            <li><span class="points">10 Points – Disciplined:</span> XP Gain +5%</li>
-            <li><span class="points">20 Points – Persistent:</span> MP Regeneration +20%, Magic Attack +10</li>
-            <li><span class="points">30 Points – Charismatic:</span> Reduce shop costs by 20%</li>
-            <li><span class="points">50 Points – Resourceful:</span> HP/MP from consumables +30%</li>
-            <li><span class="points">70 Points – Reactive:</span> Magic Defense +30</li>
-            <li><span class="points">90 Points – Calculated:</span> Max MP +100, MP Regeneration +15%</li>
-            <li><span class="points">120 Points – Focused:</span> Magic Attack +30</li>
-            <li><span class="points">150 Points – Astral:</span> Ignore 25% of magical defense</li>
-        </ul>
+        <h3>Intelligence (INT)</h3>
+        <p>The mark of a true spellcaster. INT governs your command of the arcane, empowering <strong>Mages, Paladins,</strong> and <strong>Tricksters</strong>. Each point grants <code style="color:#2196F3;">+0.15%</code> magical damage, <code style="color:#2196F3;">+0.75</code> flat magic damage, and <code style="color:#2196F3;">+1</code> max MP.</p>
+        <div class="info-card">
+            <h4>Intelligence Perks</h4>
+            <ul class="perk-list">
+                <li><span class="points-text">5 Points –</span> <span class="perk-name">Bookworm:</span> Max MP +15, Magic Attack +5</li>
+                <li><span class="points-text">10 Points –</span> <span class="perk-name">Disciplined:</span> XP Gain +5%</li>
+                <li><span class="points-text">20 Points –</span> <span class="perk-name">Persistent:</span> MP Regeneration +20%, Magic Attack +10</li>
+                <li><span class="points-text">30 Points –</span> <span class="perk-name">Charismatic:</span> Reduce shop costs by 20%</li>
+                <li><span class="points-text">50 Points –</span> <span class="perk-name">Resourceful:</span> HP/MP from consumables +30%</li>
+                <li><span class="points-text">70 Points –</span> <span class="perk-name">Reactive:</span> Magic Defense +30</li>
+                <li><span class="points-text">90 Points –</span> <span class="perk-name">Calculated:</span> Max MP +100, MP Regeneration +15%</li>
+                <li><span class="points-text">120 Points –</span> <span class="perk-name">Focused:</span> Magic Attack +30</li>
+                <li><span class="points-text">150 Points –</span> <span class="perk-name">Astral:</span> Ignore 25% of magical defense</li>
+            </ul>
+        </div>
 
-        <!-- VITALITY -->
-        <h3 class="subsection-title">Vitality (VIT)</h3>
-        <p class="stat-description">The source of resilience and survivability, crucial for tanks like <strong>Knights</strong> and <strong>Warlocks</strong>. Provides Health, HP regeneration, and defensive perks.</p>
-        <ul class="perk-list">
-            <li><span class="points">5 Points – Regeneration:</span> HP Regeneration +25%</li>
-            <li><span class="points">10 Points – Rejuvenation:</span> HP Regeneration +30%</li>
-            <li><span class="points">20 Points – Fortitude:</span> +8 DEF</li>
-            <li><span class="points">30 Points – Vigor:</span> Area-effect abilities gain +10% Radius</li>
-            <li><span class="points">50 Points – Hearty:</span> Max HP +100, HP Regeneration +20%</li>
-            <li><span class="points">70 Points – Tenacious:</span> Duration of all crowd control effects reduced by 25%</li>
-            <li><span class="points">90 Points – Hearty II:</span> Max HP +150, HP Regeneration +20%</li>
-            <li><span class="points">120 Points – Adaptive:</span> Reduce damage from repeated instances by 4%, up to 20%</li>
-            <li><span class="points">150 Points – Juggernaut:</span> Max HP +10%</li>
-        </ul>
-        
-        <!-- =========== SECONDARY STATS =========== -->
-        <h2 class="section-title" id="secondary-stats">Secondary Stats</h2>
-        <p class="stat-description">These stats are derived from your Primary Stats, gear, and other effects, representing your character's tangible power and utility.</p>
-        <ul class="secondary-stat-list">
-            <li><strong>Attack (ATK):</strong> Your total damage, combining level-based increases and weapon stats.</li>
-            <li><strong>Defense (DEF):</strong> Your total damage reduction, combining level-based increases and armor stats.</li>
-            <li><strong>Movement Speed (SPD):</strong> Your movement speed. Starts at a base of 18.</li>
-            <li><strong>Jump (JMP):</strong> Your jump height. Starts at a base of 75.</li>
-            <li><strong>Fortune (GRD):</strong> Increases the chance for double Mushtoken drops and affects fishing outcomes.</li>
-            <li><strong>Physical Attack Bonus (PYS):</strong> A percentage bonus to physical damage, derived from <strong>STR</strong>.</li>
-            <li><strong>Magical Attack Bonus (MAG):</strong> A percentage bonus to magical damage, derived from <strong>INT</strong>.</li>
-            <li><strong>Agility (AGL):</strong> Your attack speed, derived primarily from <strong>DEX</strong>.</li>
-            <li><strong>Block Chance (BLK):</strong> The chance to block a physical attack, reducing damage by 50%. Influenced by <strong>DEX</strong> and gear.</li>
-            <li><strong>Critical Strike Chance (CRT):</strong> The chance to land a critical hit for 50% bonus damage. Influenced by <strong>DEX</strong> and gear.</li>
-            <li><strong>Warding:</strong> Your magical resistance. Reduces incoming magic damage. Functions like a "magic block."</li>
-        </ul>
-
-        <!-- =========== STAT CALCULATIONS =========== -->
-        <h2 class="section-title" id="calculations">Stat Calculation Deep Dive</h2>
-        <p class="stat-description">For the adventurer who leaves nothing to chance, this section details the precise formulas and progression of each Primary Stat's derived bonuses.</p>
-
-        <!-- STR Table -->
-        <h3 class="subsection-title">Strength Calculations</h3>
-        <p class="stat-description">Formula: <code>PYS Bonus = floor(STR * 0.625)</code> | <code>Stamina = floor(STR * 0.05)</code></p>
-        <table>
-            <thead><tr><th>Points</th><th>Physical Attack Bonus (PYS)</th><th>Stamina Bonus</th></tr></thead>
-            <tbody>
-                <tr><td>10</td><td>6%</td><td>0.5</td></tr>
-                <tr><td>50</td><td>31%</td><td>2.5</td></tr>
-                <tr><td>100</td><td>62%</td><td>5.0</td></tr>
-                <tr><td>150</td><td>93%</td><td>7.5</td></tr>
-                <tr><td>200</td><td>125%</td><td>10.0</td></tr>
-            </tbody>
-        </table>
-
-        <!-- DEX Table -->
-        <h3 class="subsection-title">Dexterity Calculations</h3>
-        <p class="stat-description">Formula: <code>Attack Speed = DEX * 0.45%</code> | <code>Crit Chance = DEX * 0.1667%</code></p>
-        <table>
-            <thead><tr><th>Points</th><th>Attack Speed Bonus</th><th>Critical Strike Chance Bonus</th></tr></thead>
-            <tbody>
-                <tr><td>10</td><td>4.5%</td><td>~1.67%</td></tr>
-                <tr><td>50</td><td>22.5%</td><td>~8.34%</td></tr>
-                <tr><td>100</td><td>45.0%</td><td>~16.67%</td></tr>
-                <tr><td>150</td><td>67.5%</td><td>~25.00%</td></tr>
-                <tr><td>200</td><td>90.0%</td><td>~33.34%</td></tr>
-            </tbody>
-        </table>
-
-        <!-- INT Table -->
-        <h3 class="subsection-title">Intelligence Calculations</h3>
-        <p class="stat-description">Formula: <code>MAG Bonus = INT * 0.15%</code> | <code>MP Bonus = INT * 1</code></p>
-        <table>
-            <thead><tr><th>Points</th><th>Magical Attack Bonus (MAG)</th><th>Flat Mana Bonus</th></tr></thead>
-            <tbody>
-                <tr><td>10</td><td>1.5%</td><td>10</td></tr>
-                <tr><td>50</td><td>7.5%</td><td>50</td></tr>
-                <tr><td>100</td><td>15.0%</td><td>100</td></tr>
-                <tr><td>150</td><td>22.5%</td><td>150</td></tr>
-                <tr><td>200</td><td>30.0%</td><td>200</td></tr>
-            </tbody>
-        </table>
-
-        <!-- VIT Table -->
-        <h3 class="subsection-title">Vitality Calculations</h3>
-        <p class="stat-description">Formula: <code>Base HP Bonus = VIT * 9</code> | <code>MP Bonus = VIT * 2</code></p>
-        <table>
-            <thead><tr><th>Points</th><th>Base Hit Point (HP) Bonus</th><th>Mana Point (MP) Bonus</th></tr></thead>
-            <tbody>
-                <tr><td>10</td><td>90</td><td>20</td></tr>
-                <tr><td>50</td><td>450</td><td>100</td></tr>
-                <tr><td>100</td><td>900</td><td>200</td></tr>
-                <tr><td>150</td><td>1350</td><td>300</td></tr>
-                <tr><td>200</td><td>1800</td><td>400</td></tr>
-            </tbody>
-        </table>
-        
+        <h3>Vitality (VIT)</h3>
+        <p>The source of resilience and survivability. A crucial stat for those who wish to stand firm against overwhelming odds, particularly <strong>Knights</strong> and <strong>Warlocks</strong>, by increasing Health, Regeneration, and defensive utility.</p>
+        <div class="info-card">
+            <h4>Vitality Perks</h4>
+            <ul class="perk-list">
+                <li><span class="points-text">5 Points –</span> <span class="perk-name">Regeneration:</span> HP Regeneration +25%</li>
+                <li><span class="points-text">10 Points –</span> <span class="perk-name">Rejuvenation:</span> HP Regeneration +30%</li>
+                <li><span class="points-text">20 Points –</span> <span class="perk-name">Fortitude:</span> +8 DEF</li>
+                <li><span class="points-text">30 Points –</span> <span class="perk-name">Vigor:</span> Area-effect abilities gain +10% Radius</li>
+                <li><span class="points-text">50 Points –</span> <span class="perk-name">Hearty:</span> Max HP +100, HP Regeneration +20%</li>
+                <li><span class="points-text">70 Points –</span> <span class="perk-name">Tenacious:</span> Duration of crowd control effects on you reduced by 25%</li>
+                <li><span class="points-text">90 Points –</span> <span class="perk-name">Hearty II:</span> Max HP +150, HP Regeneration +20%</li>
+                <li><span class="points-text">120 Points –</span> <span class="perk-name">Adaptive:</span> Reduce damage taken by repeated damage from the same instance by 4%, up to 20%</li>
+                <li><span class="points-text">150 Points –</span> <span class="perk-name">Juggernaut:</span> Max HP +10%</li>
+            </ul>
+        </div>
     </div>
+
+    <hr class="section-divider">
+
+    <div id="secondary-stats">
+        <h2>Secondary Stats: The Tangible Effects</h2>
+        <p>These stats are derived from your Primary Stats, gear, and other effects. They represent your character's real-world effectiveness in combat and other activities.</p>
+        <div class="info-card">
+            <h4>Secondary Stat Overview</h4>
+            <ul class="secondary-stats-list">
+                <li><strong>Attack (ATK):</strong> Your total current attack damage, combining level-based increases and your equipped weapon's stats.</li>
+                <li><strong>Defense (DEF):</strong> Your total damage reduction, combining level-based increases and your equipped armor's stats.</li>
+                <li><strong>Movement Speed (SPD) & Jump (JMP):</strong> Your character's mobility. Default values are 18 and 75, respectively.</li>
+                <li><strong>Fortune (Greed / GRD):</strong> Increases the chance for double Mushtoken drops and affects fishing rarity.</li>
+                <li><strong>Physical/Magical Attack Bonus (PYS/MAG):</strong> Percentage damage increases for Physical and Magical attacks, derived from STR and INT.</li>
+                <li><strong>Agility (AGL):</strong> Your attack speed, derived primarily from DEX and gear.</li>
+                <li><strong>Block Chance (BLK):</strong> The chance to block a physical attack, reducing damage by 50%. Influenced by DEX and gear.</li>
+                <li><strong>Critical Strike Chance (CRT):</strong> The chance for a critical hit (default: +50% damage). Influenced by DEX and gear.</li>
+                <li><strong>Warding:</strong> Your magical resistance. Functions as a "magic block," reducing incoming magic damage by a percentage.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="calculations">
+        <h2>Stat Calculation Deep Dive</h2>
+        <p>For the adventurer who leaves nothing to chance, this section details the precise formulas and progression of each Primary Stat's derived bonuses, extrapolated to 200 points.</p>
+
+        <h4>Strength Calculations</h4>
+        <div class="info-card">
+            <code>PYS Bonus = floor(STR * 0.625)</code> | <code>Stamina = floor(STR * 0.05)</code>
+            <table>
+                <thead><tr><th>Points</th><th>Physical Attack Bonus (PYS)</th><th>Stamina Bonus</th></tr></thead>
+                <tbody>
+                    <tr><td>50</td><td>31%</td><td>2.5</td></tr>
+                    <tr><td>100</td><td>62%</td><td>5.0</td></tr>
+                    <tr><td>150</td><td>93%</td><td>7.5</td></tr>
+                    <tr><td>200</td><td>125%</td><td>10.0</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Dexterity Calculations</h4>
+        <div class="info-card">
+            <code>Attack Speed = DEX * 0.45%</code> | <code>Crit Chance ≈ DEX * 0.1667%</code>
+            <table>
+                <thead><tr><th>Points</th><th>Attack Speed Bonus</th><th>Crit Chance Bonus (Approx.)</th></tr></thead>
+                <tbody>
+                    <tr><td>50</td><td>22.5%</td><td>8.3%</td></tr>
+                    <tr><td>100</td><td>45.0%</td><td>16.7%</td></tr>
+                    <tr><td>150</td><td>67.5%</td><td>25.0%</td></tr>
+                    <tr><td>200</td><td>90.0%</td><td>33.3%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Intelligence Calculations</h4>
+        <div class="info-card">
+            <code>MAG Bonus = INT * 0.15%</code> | <code>MP Bonus = INT * 1</code>
+            <table>
+                <thead><tr><th>Points</th><th>Magical Attack Bonus (MAG)</th><th>Flat Mana Bonus</th></tr></thead>
+                <tbody>
+                    <tr><td>50</td><td>7.5%</td><td>50</td></tr>
+                    <tr><td>100</td><td>15.0%</td><td>100</td></tr>
+                    <tr><td>150</td><td>22.5%</td><td>150</td></tr>
+                    <tr><td>200</td><td>30.0%</td><td>200</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Vitality Calculations</h4>
+        <div class="info-card">
+            <code>Base HP Bonus = VIT * 9</code> | <code>MP Bonus = VIT * 2</code>
+            <table>
+                <thead><tr><th>Points</th><th>Base Hit Point (HP) Bonus</th><th>Mana Point (MP) Bonus</th></tr></thead>
+                <tbody>
+                    <tr><td>50</td><td>450</td><td>100</td></tr>
+                    <tr><td>100</td><td>900</td><td>200</td></tr>
+                    <tr><td>150</td><td>1350</td><td>300</td></tr>
+                    <tr><td>200</td><td>1800</td><td>400</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>This guide was forged through a unique collaboration with Vesteria expert Dios_mogs.<br>All information has been rigorously verified for accuracy to create the ultimate resource for aspiring heroes.</p>
+    </div>
+
+</div>
 
 </body>
 </html>
