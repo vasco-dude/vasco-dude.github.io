@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vesteria Codex - The Hunter's Path</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            font-size: 3em; text-align: center; margin-bottom: 5px;
+        }
+        .tagline {
+            font-size: 1.2em; text-align: center; font-style: italic; color: #606770; margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.2em; border-bottom: 2px solid #e1e4e8; padding-bottom: 10px; margin-top: 50px;
+        }
+
+        h3 {
+            font-size: 1.8em; margin-top: 40px; color: #4CAF50; /* Hunter Green */
+        }
+        
+        h4 {
+            font-size: 1.4em; margin-top: 30px; border-left: 4px solid #4CAF50; padding-left: 15px;
+        }
+
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background-color: #f7f9fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 30px 0;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .sub-nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            background-color: #e9eaec;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .sub-nav a:hover {
+            background-color: #4CAF50;
+            color: #ffffff;
+        }
+
+        .section-divider {
+            border: 0;
+            height: 2px;
+            background: #e1e4e8;
+            margin: 60px 0;
+        }
+
+        .build-card {
+            background-color: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .two-column-layout {
+            display: flex;
+            gap: 40px;
+        }
+        .two-column-layout > div {
+            flex: 1;
+        }
+
+        strong, .perk-name {
+            font-weight: 600;
+            color: #34495e;
+        }
+        .perk-name {
+            color: #2980b9;
+        }
+
+        ul {
+            list-style-type: '✔  ';
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background-color: #e9eaec;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid #e1e1e1;
+            padding-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .two-column-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .container { padding: 20px; }
+            h1 { font-size: 2.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Hunter's Path</h1>
+    <p class="tagline">An In-Depth Guide to the Masters of Bow, Dagger, and Song</p>
+
+    <nav class="sub-nav">
+        <a href="#base-hunter">Base Hunter</a>
+        <a href="#assassin">Assassin</a>
+        <a href="#ranger">Ranger</a>
+        <a href="#trickster">Trickster</a>
+        <a href="#bard">Bard</a>
+    </nav>
+
+    <div id="base-hunter">
+        <h2>Part I: The Foundations of the Hunt (Levels 1-29)</h2>
+        <p>Upon reaching Level 10, you can speak to a Representative Shepherd to become a Hunter. The Hunter class is defined by its agility, versatility, and high damage potential. From the start, you will learn to use both daggers for close-quarters combat and bows for ranged encounters.</p>
+
+        <h4>Core Skill Kit</h4>
+        <ul>
+            <li><strong>Double Jump (Passive):</strong> Enhances your natural mobility.</li>
+            <li><strong>Execute (Dagger Skill):</strong> A powerful melee finisher for low-health targets.</li>
+            <li><strong>Barrage (Bow Skill):</strong> A spread-shot of three arrows, perfect for close-range bursts.</li>
+            <li><strong>Shunpo (Mobility Skill):</strong> A forward dash that deals damage and auto-equips your dagger, acting as a perfect engagement tool.</li>
+        </ul>
+
+        <h4>Leveling Stat & Gear Progression (Levels 10-30)</h4>
+        <div class="build-card">
+            <div class="two-column-layout">
+                <div>
+                    <strong>Stat Priority:</strong><br>
+                    <code>Full Strength (STR)</code>
+                    <p>Early power comes from boosting base Physical Damage. Key weapons like the <strong>Spider Fang Dagger</strong> have a poison perk, <span class="perk-name">Caustic Wounds</span>, that scales directly with STR.</p>
+                </div>
+                <div>
+                    <strong>Key Gear to Acquire:</strong>
+                    <ul>
+                        <li><strong>Dagger:</strong> Spider Fang Dagger</li>
+                        <li><strong>Headgear:</strong> Ratking Bucket (Quest Reward)</li>
+                        <li><strong>Armor:</strong> Snowy Bandit Armor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="subclasses">
+        <h2>Part II: Choosing Your Path (Level 30+)</h2>
+        <p>At Level 30, your journey truly begins. You must choose one of four distinct subclasses. This choice is permanent and defines your role. Remember, a build is a <strong>pre-fight commitment</strong>; you cannot swap gear in combat.</p>
+        
+        <div id="assassin" class="subclass-section">
+            <h3>The Assassin - Master of Burst Damage</h3>
+            <p>The Assassin is a fragile but lethal melee fighter who excels at eliminating key targets in a breathtakingly short burst of damage. Your gameplay revolves around two core mechanics: <span class="perk-name">Assassin's Intent</span>, which echoes a portion of your damage in a 2.5s window, and the <span class="perk-name">Ravenous</span> buff from Shadow Walk, which amplifies your damage against wounded targets.</p>
+            
+            <h4>Assassin Build 1: The Burst Assassin</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>150 STR → 150 DEX → rest STR</code><br><small>This balances raw power with the necessary speed and crit to be effective.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Stack Critical Damage from <strong>The Incisor</strong> (+25%) and <strong>Vampiric Vest</strong> (+25%) for a massive +50% total. Use the **Abyssal Dagger**'s <span class="perk-name">Echo</span> perk to triple your Execute hits within the burst window.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Assassin Build 2: The Cryo Assassin</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>Full Dexterity (DEX)</code><br><small>Your only goal is applying stacks, and DEX provides the highest Attack Speed.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>This build requires the **Frozen Forgotten Dagger**. Its <span class="perk-name">Cryo Cascades</span> perk deals damage equal to **10% of the enemy's maximum HP** after enough hits. Use the **Shelmet** for more damage per hit or the **Mogloko Mask** for faster stacking.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ranger" class="subclass-section">
+            <h3>The Ranger - Master of Archery</h3>
+            <p>The Ranger is Vesteria's most versatile damage dealer, using a single skill, <strong>Stance</strong>, which completely transforms their arrows and playstyle based on their highest stat.</p>
+            
+            <h4>Ranger Build 1: The Dex Ranger (Sustained DPS)</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>Half DEX, Half STR (1 more DEX)</code><br><small>A hybrid build to power up your arrows (STR) while enabling the rapid-fire DEX <span class="perk-name">Ranger's Stance</span>.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Focus on critical hits. Stack +50% Crit Damage from <strong>The Incisor</strong> and **Vampiric Vest**. Use the **Abyssal Bow** for long-range damage or the **Forgotten Bow** to execute low-health bosses.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Ranger Build 2: The Str Ranger (Sniper)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>Full Strength (STR)</code><br><small>Maximizes the power of each devastating shot from the STR <span class="perk-name">Sniper's Stance</span>.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Combine the **Straggly Beard** (+40 STR) with the **Abyssal Bow**. The extreme range of your stance amplifies your damage via the bow's perk. Stack Crit Damage with **The Incisor** and **Vampiric Vest** to make every critical shot a massive event.
+                    </div>
+                </div>
+            </div>
+            
+            <h4>Ranger Build 3: The Int Ranger (Explosive Mage)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>Half INT, Half DEX (1 more INT)</code><br><small>Enables the INT <span class="perk-name">Spellslinger's Stance</span> while providing the attack speed to fire more explosions.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Your explosions can crit! Use **Ricochet** to bounce your exploding arrows. Stack +50% Crit Damage with **The Incisor** and **Vampiric Vest** to make your AoE devastating. Choose between the **Wise Beard** (+40 INT) or **Mustache** (+40 DEX) to enable your stat spread.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="trickster" class="subclass-section">
+            <h3>The Trickster - Master of Traps & Tactics</h3>
+            <p>The Trickster is a dagger-wielding fighter who controls the battlefield through cunning debuffs, traps, and unique magical abilities. They are known as counters to "glass cannon" builds.</p>
+            
+            <h4>Trickster Build 1: The "Stat" Stick Trickster (DoT & Control)</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>70 DEX → rest INT</code><br><small>Focuses on powering up the magical effects and debuffs granted by your gear.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Requires the **Jade Bow** for its massive AoE slow. Use the **Jade Dagger** to apply a true damage debuff to bosses, or the **Starshroom Dagger** to turn your Shunpo into an AoE DoT field. The **Dragon Grunt Headband** modifies Bubble Burst for easier debuff application.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Trickster Build 2: The Str Trickster (Hit-and-Run)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>90 DEX → rest STR</code><br><small>A brawler build that focuses on landing a flurry of powerful M1 attacks and escaping safely.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Use the **Jade Bow** to slow enemies, then attack with your dagger. Your escape is key: The **Mythic Mushroom Boots** reduce jump stamina cost, allowing you to spam your maxed-out **Disengage** skill. The **Gravedigger Mask** adds another dash via Execute for unparalleled mobility.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="bard" class="subclass-section">
+            <h3>The Bard - Master of Support</h3>
+            <p>The Bard is Vesteria's premier support class, a selfless anchor who uses magical songs played on unique instruments to empower allies, control enemies, and ensure victory.</p>
+            
+            <h4>Bard Build 1: The Int Bard (Caster Support)</h4>
+            <div class="build-card">
+                <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>70 DEX → rest INT</code><br><small>The quintessential caster, focusing on spell damage with Crescendo and high mana for sustained buffing.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>The **Moko Drum** is the heart of your damage, doubling the power of your fourth Crescendo. Equip **Snow Goggles** to gain a new damage spell, <span class="perk-name">Chilling Gale</span>. Use the **Jade Bow** for crowd control.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Bard Build 2: The Str Bard (Battle Skald)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>70 DEX → rest STR</code><br><small>A front-line fighter who buffs allies while dealing significant physical damage.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>This build requires the **Grizzly Head** and **Grizzly Armor**. Together, they grant the <span class="perk-name">Piercing Roar</span> ability, a powerful STR-scaling AoE attack unique to this setup. The +35 STR from the helmet is your main source of power.
+                    </div>
+                </div>
+            </div>
+            
+            <h4>Bard Build 3: The Vit Bard (The Unkillable Anchor)</h4>
+            <div class="build-card">
+                 <div class="two-column-layout">
+                    <div>
+                        <strong>Stat Allocation:</strong><br><code>70 STR → 70 DEX → rest VIT</code><br><small>A selfless support focused on extreme survivability to guarantee your buffs never falter.</small>
+                    </div>
+                    <div>
+                        <strong>Key Synergy:</strong><br>Your tankiness comes from two items: the **Gravedigger Vest**, whose <span class="perk-name">Death's Door</span> perk turns burst damage into a manageable DoT, and the **Tribute Lyre**, which provides massive magic defense and a 10% block chance. You will outlive everything.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>This guide was forged through a unique collaboration with Vesteria expert [Your Name Here].<br>All information has been rigorously verified for accuracy to create the ultimate resource for aspiring heroes.</p>
+    </div>
+
+</body>
+</html>
